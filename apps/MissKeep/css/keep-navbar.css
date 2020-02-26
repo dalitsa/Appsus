@@ -1,0 +1,25 @@
+*{
+    box-sizing: border-box;
+}
+
+
+.keep-navbar{
+background-color: whitesmoke;
+color: gray;
+
+}
+
+.keep-header{
+color:gray
+}
+
+
+.keep-note-nav-bar{
+    background-color: rgb(66, 62, 62);
+    color:whitesmoke
+}
+
+.edit-note{
+    border: 1px black solid;
+
+}
