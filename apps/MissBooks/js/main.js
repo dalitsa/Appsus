@@ -4,7 +4,7 @@ import bookNavbar from './cmps/bookNavBar.cmp.js'
 import userMsg from './cmps/user-msg.cmp.js'
 
 
-const router = new VueRouter({ routes })
+// const router = new VueRouter({ routes })
 
 
 export default ({
