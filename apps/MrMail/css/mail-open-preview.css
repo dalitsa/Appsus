@@ -1,0 +1,29 @@
+.mail-open-preview {
+    list-style: none;
+    border-bottom: 1px solid lightgray;
+}
+
+.open-preview-subject {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.open-preview-subjectInline {
+    font-size: 2em;
+}
+
+.open-preview-body {
+    margin-left: 20%;
+    font-weight: lighter;
+    font-size: 1em;
+}
+
+.open-preview-user {
+    font-weight: bold;
+}
+
+.mail-open-preview-btn img {
+    width: 2em;
+    padding: 5px;
+}

@@ -6,7 +6,7 @@ import mailList from './pages/mail-list.cmp.js'
 export default {
     template: `
     
-    <section class="mail-container" v-if="this.mails" :mails="this.mails">
+    <section class="mail-container" v-if="mails" :mails="mails">
         <mail-list :mails="mails" >{{mails}}</mail-list>
     </section>
     `,
