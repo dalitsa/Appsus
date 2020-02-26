@@ -1,0 +1,66 @@
+@import './book.css';
+@import './book-preview.css';
+@import './welcome.css';
+@import './nav-bar.css';
+@import './about.css';
+@import './add-review.css';
+@import './add-book.css';
+@import './review-preview.css';
+@import './event-bus.css';
+@import url('https://fonts.googleapis.com/css?family=Saira+Semi+Condensed&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+
+/* BASE */
+
+a {
+    text-decoration: none;
+    margin: 0;
+    color: black;
+}
+
+body {
+    font-family: 'Saira Semi Condensed', sans-serif;
+    font-size: 1em;
+}
+
+.books-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.books-list a {
+    width: 25%;
+}
+
+.book-details {
+    background-color: lightcoral;
+    width: 100%;
+}
+
+.slide-fade-enter-active {
+    transition: all 3s ease;
+}
+
+.slide-fade-leave-active {
+    transition: all .4s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+
+.slide-fade-enter,
+.slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */
+
+{
+    transform: translateX(10px);
+    opacity: 0;
+}
+
+@media (max-width: 890px) {
+    .books-list a {
+        width: 50%
+    }
+}

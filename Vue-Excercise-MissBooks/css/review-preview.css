@@ -1,0 +1,21 @@
+.review-preview h3 {
+    font-size: 1em;
+    margin: 0;
+    padding: 3px;
+}
+
+.review-preview {
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    width: fit-content;
+    margin: 5px;
+}
+
+.reviews-container {
+    display: flex;
+    justify-content: center;
+}
+
+.review-header {
+    text-align: center;
+}

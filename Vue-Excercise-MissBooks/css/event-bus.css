@@ -1,0 +1,26 @@
+.msg-container {
+    background-color: lightgray;
+    padding: 5px 10px;
+    position: fixed;
+    top: 0;
+    right: 10px;
+    width: fit-content;
+}
+
+.msg-container.success {
+    background-color: lightgreen;
+    opacity: 0.8;
+}
+
+.msg-container.danger {
+    background-color: red;
+}
+
+.user-msg-btn {
+    background: none;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    margin: 5px 0 5px 0;
+}

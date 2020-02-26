@@ -1,0 +1,10 @@
+.navbar {
+    width: 100%;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+}
+
+.navbar-btn {
+    margin-right: 5px;
+    text-decoration: none;
+}

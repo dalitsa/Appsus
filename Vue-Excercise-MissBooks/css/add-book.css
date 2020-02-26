@@ -1,0 +1,14 @@
+.add-book-btn {
+    background: none;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    margin: 5px 0 5px 0;
+}
+
+.filtered-google-books li {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgray;
+}
