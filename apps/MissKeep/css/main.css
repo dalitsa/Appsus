@@ -1,5 +1,9 @@
-@import './event-bus.css';
 @import './keep-navbar.css';
-@import url('https://fonts.googleapis.com/css?family=Saira+Semi+Condensed&display=swap');
+
+/************************************base  ****/
+
+ul{
+    list-style: none;
+}
 
 
