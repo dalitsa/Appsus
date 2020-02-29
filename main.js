@@ -2,6 +2,7 @@ import navBar from '../pages/cmps/navbar.cmp.js'
 import routes from '../routes.js'
 
 
+
 const router = new VueRouter({ routes })
 
 
@@ -11,7 +12,8 @@ new Vue({
     template: `
         <section class="app-sus">   
             <transition name="slide-fade"> 
-            <nav-bar></nav-bar>
+            <nav-bar></nav-bar> 
+
         </transition>
         <transition name="slide-fade"> 
             <router-view></router-view>
@@ -21,5 +23,6 @@ new Vue({
     `,
     components: {
         navBar,
+
     }
 })

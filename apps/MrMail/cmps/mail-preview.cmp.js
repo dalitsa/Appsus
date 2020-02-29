@@ -1,19 +1,27 @@
 import mailOpenPreview from '../cmps/mail-open-preview.cmp.js'
+import { eventBus } from '../services/event-bus.js';
+
 
 
 export default {
     template: `
-<li class="mail-preview" > 
-    <div class="mail-row"  @click ="selected(mail)">{{mail.from}}<span class="mail-content"><span class = "mail-subject"> {{mail.subject}}</span> <span class="mail-body">{{previewTxt}}</span></span> <span class = "mail-sent-at">{{fixTime}}</span></div>
-    <mail-open-preview v-if= "isShown" :mail="currMail"></mail-open-preview>
+<li class="mail-preview "  > 
+
+    <div class="mail-row"  @click ="selected" v-bind:class="readMode">
+    <span>    <span class="fa fa-star" @click.stop="addImportant"  v-bind:class = "addImportance"></span>
+ 
+   {{mail.from}}</span><span class="mail-content"><span class = "mail-subject"> {{mail.subject}}</span> <span class="mail-body">{{previewTxt}}</span></span> <span class = "mail-sent-at">{{fixTime}}</span></div>
+   <transition name="slide-fade">  <mail-open-preview v-if= "isShown"   @removeMail="removeMail" :mail="currMail"></mail-open-preview>  </transition>
 </li>
+       
+
     `,
     props: ['mail'],
 
     data() {
         return {
             currMail: null,
-            isShown: false
+            isShown: false,
         }
     },
 
@@ -22,18 +30,42 @@ export default {
             return new Date(this.mail.sentAt).toLocaleTimeString("en-us")
         },
         previewTxt() {
-            return this.mail.body.substring(0, 10) + '...'
+            return this.mail.body.substring(0, 20) + '...'
+        },
+        readMode() {
+            return { 'is-read': this.mail.isRead }
+        },
+        addImportance() {
+            return { "fa fa-star checked": this.mail.isImportant }
         }
+
+
     },
     methods: {
-        selected(mail) {
-            this.$emit('selected', mail)
-            this.currMail = mail
+        selected() {
+            this.$emit('selected', this.mail)
+            this.currMail = this.mail
             this.toggleShown()
+            this.mail.isRead = true
+
+        },
+        addImportant() {
+            this.mail.isImportant = true
+            this.$emit('selected', this.mail)
+            this.$emit('mail-changed')
+
+
         },
         toggleShown() {
             this.isShown = !this.isShown
-        }
+        },
+        removeMail(id) {
+            this.$emit('removeMail', id)
+            this.isShown = false
+            this.$emit('mail-changed')
+        },
+
+
     },
 
     components: {

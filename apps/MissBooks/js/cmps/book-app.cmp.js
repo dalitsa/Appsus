@@ -3,12 +3,14 @@ import booksList from '../cmps/book-list.cmp.js'
 import bookFilter from '../cmps/book-filter.cmp.js'
 import bookDetails from '../cmps/book-details.cmp.js'
 import addBook from '../cmps/add-book.cmp.js'
+import bookNavBar from './bookNavBar.cmp.JS'
+
 
 export default {
     template: `
     <section class="books-container">
-        <router-link to="/list/about" exact>
-        </router-link>
+
+        <router-link to="/list/about" exact> </router-link>
         <book-filter  @set-filter="setFilter"></book-filter>
         <!-- <book-details v-if="selectedBook"  :book="selectedBook" @closePage = "closePage" ></book-details> -->
         <books-list :books="booksForDisplay"  @selected="selectBook"></books-list>
@@ -75,7 +77,9 @@ export default {
         booksList,
         bookFilter,
         bookDetails,
-        addBook
+        addBook,
+        'book-navbar': bookNavBar
+
     }
 
 }

@@ -1,2 +1,35 @@
 @import './mail-list.css';
 @import './mail-open-preview.css';
+@import './side-bar.css';
+@import './mail-compose.css';
+@import './mail-nav-bar.css';
+.body {
+    margin: 0;
+}
+
+.mail-container {
+    display: grid;
+    grid-template-rows: 0.5fr 4fr;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: "nav nav " "side main";
+    background-color: #fffdf9;
+    height: 100vh;
+}
+
+.nav-bar {
+    grid-area: nav;
+}
+
+.side-bar {
+    grid-area: side;
+    max-height: 200px;
+}
+
+.mail-list {
+    grid-area: main;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}

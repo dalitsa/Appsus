@@ -11,11 +11,12 @@ export default ({
     template: `
         <section class="my-app">   
             <user-msg></user-msg>
-            <transition name="slide-fade"> 
             <book-navbar></book-navbar>
+            <transition name="slide-fade"> 
+            <book-app></book-app>
         </transition>
         <transition name="slide-fade"> 
-            <router-view></router-view>
+            <!-- <router-view></router-view> -->
             </transition>
 
         </section>

@@ -1,19 +1,39 @@
 .mail-row {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid lightgray;
-    padding: 5px;
+    border-bottom: 1px solid #e3e7f1;
+    background-color: #8186d5;
+    color: #ecfcff;
+    padding: 10px;
+}
+
+.checked {
+    color: yellow;
+}
+
+.is-read {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #fffdf9;
+    background-color: #c6cbef;
+    color: #494ca2;
+}
+
+.mail-row.is-read:hover {
+    color: white;
+    background-color: #494ca2;
 }
 
 .mail-row:hover {
-    background-color: rgb(233, 233, 233);
+    color: white;
+    background-color: #494ca2;
+    cursor: pointer;
 }
 
 .mail-preview {
     list-style: none;
     border-right: 1px solid lightgray;
     border-left: 1px solid lightgray;
-    border-top: 1px solid lightgray;
 }
 
 .mail-body {
@@ -24,10 +44,6 @@
     font-weight: bold;
 }
 
-.mails-list {
+.mail-list ul {
     padding: 0;
-}
-
-.mails-list li:hover {
-    cursor: pointer;
 }

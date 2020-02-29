@@ -8,10 +8,13 @@ export default {
         <ul class = "mail-open-preview"> 
        <li class= "open-preview-subject">
         <span class="open-preview-subjectInline"> {{mail.subject}}</span> 
-       <router-link :to = "'/mr-mail/'+mail.id">
-       <span class ="mail-open-preview-btn"><img src="https://image.flaticon.com/icons/svg/482/482641.svg"></span>
+    <div>
+       <router-link :to = "/mr-mail/+mail.id">
        <span class="mail-open-preview-btn"><img src="https://image.flaticon.com/icons/svg/1827/1827689.svg"></span>
-        </router-link>
+    </router-link>
+
+      <span class ="mail-open-preview-btn"><img src="https://image.flaticon.com/icons/svg/482/482641.svg" @click="removeMail"></span>
+   </div>
         </li>
        <li class= "open-preview-from"><span class="open-preview-user"> {{mail.from}} </span> {{mail.fromMail}}</li>
        <li class= "open-preview-body"> {{shortTxt}} </li>
@@ -21,9 +24,22 @@ export default {
 `,
     props: ['mail'],
 
+    data() {
+        return {
+            mailId: null
+        }
+    },
+
     computed: {
         shortTxt() {
-            return this.mail.body.substring(0, 100) + '...'
+            return this.mail.body.substring(0, 150) + '...'
+        }
+    },
+
+    methods: {
+        removeMail() {
+            this.mailId = this.mail.id
+            this.$emit('removeMail', this.mailId)
         }
     },
 

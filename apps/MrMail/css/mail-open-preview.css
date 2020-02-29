@@ -1,12 +1,19 @@
 .mail-open-preview {
     list-style: none;
+    background-color: #fffdf9;
     border-bottom: 1px solid lightgray;
+    padding: 5px;
 }
 
 .open-preview-subject {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 5px;
+}
+
+.open-preview-from {
+    padding: 5px;
 }
 
 .open-preview-subjectInline {
