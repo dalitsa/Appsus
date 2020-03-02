@@ -12,11 +12,11 @@ export default {
             class="filter-input"
         />
         </label>
-                <select class="mail-filter-read" v-model.number="filterBy.isRead" @change="searchMail">
+                <select class="mail-filter-read" v-model="filterBy.isRead" @change="searchMail">
 
-        <option  value=1>All</option>
-        <option  value=2>Read</option>
-        <option  value=3>UnRead</option>
+        <option  value='all'>All</option>
+        <option  value='read'>Read</option>
+        <option  value='unread'>UnRead</option>
 </select>
       
     </section>
@@ -25,7 +25,8 @@ export default {
         return {
             filterBy: {
                 words: '',
-                isRead: null
+                isRead: 'all',
+                star: null
             }
         }
     },

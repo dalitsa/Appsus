@@ -1,3 +1,6 @@
 @import './apps/MissBooks/css/main.css';
 @import './apps/MrMail/css/main.css';
 @import './apps/MissKeep/css/main.css';
+.appsus-logo {
+    width: 8em
+}

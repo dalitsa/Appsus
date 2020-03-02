@@ -1,6 +1,6 @@
 export default {
     template: `
-<li>Description:{{textLength}}<button v-if="isLongText" @click="toglleReadMore">{{toggleBtnTxt}}</button></li>
+<li>Description:{{textLength}}<button v-if="isLongText" @click="toglleReadMore" class="read-more-btn">{{toggleBtnTxt}}</button></li>
 
     `,
     props: ['txt'],
@@ -18,7 +18,7 @@ export default {
             if (this.txt.length <= 99) return this.txt
             if (!this.isClicked) {
                 this.isLongText = true
-                return this.txt.substring(0, 100)
+                return this.txt.substring(0, 100) + '...'
 
             } else {
 

@@ -10,10 +10,10 @@
 .mail-container {
     display: grid;
     grid-template-rows: 0.5fr 4fr;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 4fr;
     grid-template-areas: "nav nav " "side main";
     background-color: #fffdf9;
-    height: 100vh;
+    height: 100%;
 }
 
 .nav-bar {
@@ -28,8 +28,84 @@
 .mail-list {
     grid-area: main;
     overflow-y: scroll;
+    height: 100vh;
 }
 
 ::-webkit-scrollbar {
     display: none;
+}
+
+@media (max-width: 750px) {
+    .mail-container {
+        display: grid;
+        grid-template-rows: 0.5fr 0.5fr 4fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "nav " "side" "main";
+        background-color: #fffdf9;
+        height: 100vh;
+    }
+    .side-bar h3 {
+        margin: 0;
+        font-size: 1em;
+        margin-bottom: 0.3em;
+        display: flex;
+        transition: 0.3s;
+        border: 2px solid transparent;
+        border-radius: 10px;
+        cursor: pointer;
+        width: 50%;
+    }
+    a.side-bar {
+        width: 50%;
+    }
+    .side-bar-header {
+        display: flex;
+        align-items: center;
+        font-size: 1.5em;
+        margin: 0;
+        cursor: pointer;
+        border-bottom: 2px solid transparent;
+        border-radius: 10px;
+        transition: 0.3s;
+        margin-top: 0.5em;
+        margin-left: 45%;
+        width: 100%;
+        justify-content: center;
+    }
+    .side-bar {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        max-height: unset;
+    }
+    .side-bar h4 {
+        margin: 0;
+    }
+    .mail-from {
+        margin-left: 5px;
+    }
+    .mail-row {
+        font-size: 0.8em;
+    }
+    .side-bar-content {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    h3.read-indicator {
+        margin-left: 23%;
+    }
+    h3.filter-inbox {
+        margin-left: 30%;
+    }
+    h3.side-bar-sent {
+        margin-left: 12%;
+        width: fit-content;
+    }
+    h3.side-bar-draft {
+        width: fit-content;
+        margin-left: 23%;
+    }
+    h3.side-bar-star {
+        margin-left: 17%;
+    }
 }

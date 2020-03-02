@@ -1,10 +1,30 @@
 .navbar {
+    display: flex;
     width: 100%;
     border: 1px solid lightgray;
-    border-radius: 10px;
+    height: 5em;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #494ca2;
 }
 
 .navbar-btn {
-    margin-right: 5px;
+    color: #ecfcff;
+    margin-right: 1em;
     text-decoration: none;
+}
+
+.navbar-btn:hover {
+    cursor: pointer;
+}
+
+.book-navbar {
+    display: flex;
+    width: 100%;
+    border: 1px solid lightgray;
+    height: 2em;
+    padding: 5px;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #494ca2;
 }

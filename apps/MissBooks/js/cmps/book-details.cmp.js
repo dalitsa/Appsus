@@ -3,21 +3,23 @@ import { bookService } from '../services/book.service.js';
 import longText from '../cmps/long-text.cmp.js'
 import reviewAdd from '../cmps/review-add.cmp.js'
 import reviewList from '../cmps/review-list.cmp.js'
+import bookNavBar from './bookNavBar.cmp.js'
 
 export default {
     template: `
 <ul class="book-details" v-if="book"> 
+    <book-nav-bar></book-nav-bar>
     <h1>DETAILS</h1>
-    <img class = "sale-img" v-if="onSale"  src = "./img/sale.png" />
+    <!-- <img class = "sale-img" v-if="onSale"  src="'../img/sale.png'"/> -->
     <li>Book-name: {{book.title}}</li>
     <li>id: {{book.id}}</li>
-    <li>subtitle: {{book.subtitle}}</li>
-    <li>published At: {{bookAge}}</li>
+    <li>Subtitle: {{book.subtitle}}</li>
+    <li>Published At: {{bookAge}}</li>
     <li>Author: <span v-for="author in authors">{{author}}</span></li>
     <li>Page count: {{book.pageCount}}, {{readingDesc}}</li>
     <long-text v-bind:txt="book.description"> </long-text>
-    <li>categories: <span v-for="category in categories">{{category}}</span></li>
-    <li>language: {{ book.language}}</li>
+    <li>Categories: <span v-for="category in categories">{{category}}</span></li>
+    <li>Language: {{ book.language}}</li>
     <li>Price: <span :class ="togglePrice">{{ fixPrice}}</span></li>
     <img :src ="book.thumbnail" class="book-img"/>
     <reviewAdd></reviewAdd>
@@ -101,7 +103,9 @@ export default {
     components: {
         longText,
         reviewAdd,
-        reviewList
+        reviewList,
+        'book-nav-bar': bookNavBar,
+
     }
 
 };

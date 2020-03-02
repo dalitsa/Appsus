@@ -3,7 +3,6 @@ import booksList from '../cmps/book-list.cmp.js'
 import bookFilter from '../cmps/book-filter.cmp.js'
 import bookDetails from '../cmps/book-details.cmp.js'
 import addBook from '../cmps/add-book.cmp.js'
-import bookNavBar from './bookNavBar.cmp.JS'
 
 
 export default {
@@ -78,7 +77,6 @@ export default {
         bookFilter,
         bookDetails,
         addBook,
-        'book-navbar': bookNavBar
 
     }
 

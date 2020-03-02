@@ -24,7 +24,7 @@ export default {
                 subject: null,
                 body: null,
                 isRead: false,
-                sentAt: null,
+                // sentAt: null,
                 isImportant: false
             },
             mails: null
@@ -33,6 +33,7 @@ export default {
     },
     methods: {
         sendMail() {
+
             mailService.addMail(this.mail)
                 .then(mails => {
                     eventBus.$emit('mail-changed', mails);

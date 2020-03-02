@@ -1,4 +1,6 @@
 .book-img {
     width: 100px;
     padding: 5px;
+    max-height: 140px;
+    overflow: hidden;
 }

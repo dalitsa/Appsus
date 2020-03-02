@@ -1,10 +1,10 @@
 export default {
     template: `
-        <div class="navbar">
+        <div class="book-navbar">
             <router-link to="/" exact>
                <span class="navbar-btn"> Home </span>
             </router-link>
-            <router-link to="/book" exact>
+            <router-link to="/miss-books" exact>
             <span class="navbar-btn">  Our Books </span>
             </router-link>
             <router-link to="/about">

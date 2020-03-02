@@ -1,9 +1,12 @@
 import { bookService } from '../services/book.service.js';
 import { eventBus } from '../services/event-bus.service.js';
+import bookNavBar from './bookNavBar.cmp.js'
 
 export default {
     template: `
     <section class = "search-input"> 
+    <book-nav-bar></book-nav-bar>
+
       <input type="search" 
             placeholder="Try searching something" 
              @input="booksFromGoogle"
@@ -45,6 +48,9 @@ export default {
 
         }
     },
+    components: {
+        'book-nav-bar': bookNavBar,
+    }
 
 
 

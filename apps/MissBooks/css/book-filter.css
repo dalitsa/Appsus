@@ -1,0 +1,23 @@
+.book-filter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.book-filter-headline {
+    text-align: center;
+    font-size: 1.5em;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.book-filter-input {
+    padding: 5px;
+    width: 15%;
+    height: 2em;
+    border: none;
+    border-bottom: 1px solid lightgray;
+    font-size: 1em;
+    background-color: #fffdf9;
+    box-shadow: -1px 3px 8px 0px rgba(0, 0, 0, 0.75);
+}

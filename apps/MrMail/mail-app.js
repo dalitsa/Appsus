@@ -6,15 +6,9 @@ import composeArea from './cmps/compose-area.cmp.js'
 import { eventBus } from './services/event-bus.js'
 
 
-
-
-
-
-
-
 export default {
     template: `
- <section class="mail-container" v-if="mails" :mails="mails">
+ <section class="mail-container">
  <transition name="slide-fade"> 
         <router-view class="mail-list"></router-view>
         </transition>
@@ -34,10 +28,14 @@ export default {
         mailService.query()
             .then(mails => {
                 this.mails = mails
+                eventBus.$emit('importantMails', this.mails)
+                console.log(this.mails);
+
             })
         eventBus.$on('mail-changed', mails => {
             this.mails = mails
         })
+
     },
 
 

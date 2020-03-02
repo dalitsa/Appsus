@@ -1,29 +1,40 @@
-.mail-compose-header {
-    text-align: center;
-    font-size: 2em;
-    margin: 0;
-    padding: 15px;
-}
-
-.mail-compose-input {
-    width: 100%;
-    margin: 0;
-    border: none;
-    border-bottom: 1px solid lightgray;
-    font-size: 1em;
-    padding: 5px;
-}
-
-.mail-compose-text-area {
-    width: 100%;
-    font-size: 1.2em;
-    padding: 5px;
-}
-
-.mail-compose-img {
-    width: 2em;
-}
-
-.compose-area.mail-list {
-    box-shadow: -3px 3px 21px 0px rgba(0, 0, 0, 0.75);
-}
+    .mail-compose-header {
+        text-align: center;
+        font-size: 2em;
+        margin: 0;
+        padding: 15px;
+    }
+    
+    .mail-compose-input {
+        width: 100%;
+        margin: 0;
+        border: none;
+        border-bottom: 1px solid lightgray;
+        font-size: 1em;
+        padding: 5px;
+    }
+    
+    .mail-compose-text-area {
+        width: 100%;
+        font-size: 1.2em;
+        padding: 5px;
+    }
+    
+    .mail-compose-img {
+        width: 6%;
+        border: 1px solid transparent;
+        border-radius: 10px;
+        padding: 5px;
+    }
+    
+    .mail-compose-img:hover {
+        box-shadow: -3px 3px 21px 0px rgba(0, 0, 0, 0.75);
+    }
+    
+    .mail-compose-img:hover::after {
+        content: "⇀";
+    }
+    
+    .compose-area.mail-list {
+        box-shadow: -3px 3px 21px 0px rgba(0, 0, 0, 0.75);
+    }

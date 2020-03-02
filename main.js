@@ -1,5 +1,7 @@
 import navBar from '../pages/cmps/navbar.cmp.js'
 import routes from '../routes.js'
+import bookNavBar from '../apps/MissBooks/js/cmps/bookNavBar.cmp.js'
+
 
 
 
@@ -13,7 +15,7 @@ new Vue({
         <section class="app-sus">   
             <transition name="slide-fade"> 
             <nav-bar></nav-bar> 
-
+            
         </transition>
         <transition name="slide-fade"> 
             <router-view></router-view>
@@ -23,6 +25,10 @@ new Vue({
     `,
     components: {
         navBar,
+        bookNavBar
+
+    },
+    created() {
 
     }
 })

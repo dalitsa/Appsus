@@ -1,56 +1,74 @@
-.side-bar {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.side-bar-header {
-    display: flex;
-    align-items: center;
-    font-size: 2em;
-    margin: 0;
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-    border-radius: 10px;
-    transition: 0.3s;
-    margin-top: 0.5em;
-}
-
-.side-bar-header:hover {
-    color: white;
-    background-color: #494ca2;
-    padding-inline-end: 20%;
-    padding-inline-start: 10%
-}
-
-.side-bar h3 {
-    margin: 0;
-    font-size: 1.5em;
-    margin-bottom: 0.3em;
-    display: flex;
-    transition: 0.3s;
-    border: 2px solid transparent;
-    border-radius: 10px;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-}
-
-.side-bar h3:hover {
-    color: white;
-    background-color: #494ca2;
-    padding-inline-end: 20%;
-    padding-inline-start: 10%
-}
-
-.side-bar-img {
-    width: 1em;
-    margin-right: 8px
-}
-
-.filter-inbox {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    .side-bar {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-left: 0.5em;
+    }
+    
+    .side-bar-header {
+        display: flex;
+        align-items: center;
+        font-size: 2em;
+        margin: 0;
+        cursor: pointer;
+        border-bottom: 2px solid transparent;
+        border-radius: 10px;
+        transition: 0.3s;
+        margin-top: 0.5em;
+        width: 100%;
+    }
+    
+    .side-bar-header:hover {
+        color: white;
+        background-color: #494ca2;
+        padding-inline-start: 20%;
+        /* justify-content: space-between; */
+    }
+    
+    .side-bar-header:hover::after {
+        /* content: "⇀"; */
+    }
+    
+    .side-bar h3 {
+        margin: 0;
+        font-size: 1.5em;
+        margin-bottom: 0.3em;
+        display: flex;
+        transition: 0.3s;
+        border: 2px solid transparent;
+        border-radius: 10px;
+        cursor: pointer;
+        width: 100%;
+    }
+    
+    .side-bar h3:hover {
+        color: white;
+        background-color: #494ca2;
+    }
+    
+    .side-bar-img {
+        width: 1em;
+        margin-right: 8px
+    }
+    
+    a.side-bar {
+        width: 100%;
+        padding: 0;
+    }
+    
+    h3.read-indicator {
+        font-size: 1em;
+    }
+    
+    h3.read-indicator:hover {
+        color: #494ca2;
+        background-color: unset;
+        padding-inline-end: 0;
+        padding-inline-start: 0;
+        cursor: context-menu;
+    }
+    
+    .side-bar-content {
+        width: 100%;
+    }

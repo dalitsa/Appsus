@@ -4,7 +4,6 @@
     justify-content: center;
     max-height: 100%;
     padding: 5px;
-    background-color: #494ca2;
 }
 
 .filter-input {
@@ -13,8 +12,19 @@
     border: none;
     border-bottom: 1px solid lightgray;
     font-size: 1em;
+    background-color: #fffdf9;
+    box-shadow: -1px 3px 8px 0px rgba(0, 0, 0, 0.75);
+    ;
 }
 
 .mail-filter {
     display: flex;
+}
+
+.mail-filter-read {
+    background-color: #fffdf9;
+    border: none;
+    border-bottom: 1px solid lightgray;
+    border-left: 1px solid lightgray;
+    box-shadow: -1px 3px 8px 0px rgba(0, 0, 0, 0.75);
 }

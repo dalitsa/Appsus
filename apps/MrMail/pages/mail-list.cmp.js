@@ -27,12 +27,14 @@ export default {
     methods: {
         selected() {
             mailService.updateMail()
-
+            eventBus.$emit('mail-changed', this.mails);
 
 
         },
         removeMail(id) {
             mailService.removeMail(id)
+            mailService.updateMail()
+
             eventBus.$emit('mail-changed', this.mails);
         },
         updateReadMode(mail) {
@@ -47,23 +49,29 @@ export default {
     },
     computed: {
         mailsForDisplay() {
-            if (!this.filterBy && !this.isRead) return this.mails
-            if (!this.filterBy.words) {
-                return this.mails
-            }
+            console.log(this.filterBy);
+
+            if (!this.filterBy) return this.mails
+
             return this.mails.filter(mail => {
-                if (!this.filterBy.isRead) {
+                if (this.filterBy === 'important') return mail.isImportant === true
+                if (this.filterBy.isRead === "all") {
                     return mail.from.toLowerCase().includes(this.filterBy.words) || mail.subject.toLowerCase().includes(this.filterBy.words)
                 }
-                if (this.filterBy.words && this.filterBy.isRead === 1) {
-                    return mail.from.toLowerCase().includes(this.filterBy.words) || mail.subject.toLowerCase().includes(this.filterBy.words)
+
+                if (this.filterBy.isRead === 'read') {
+                    if (!this.filterBy.words) {
+                        return mail.isRead === true
+                    }
+                    return mail.isRead === true && mail.from.toLowerCase().includes(this.filterBy.words) || mail.subject.toLowerCase().includes(this.filterBy.words)
                 }
-                if (this.filterBy.words && this.filterBy.isRead === 2) {
-                    return mail.isRead === true
-                }
-                if (this.filterBy.words && this.filterBy.isRead === 3) {
+                if (this.filterBy.isRead === 'unread') {
+                    if (!this.filterBy.words) {
+                        return mail.isRead === false
+                    }
                     return mail.isRead === false && mail.from.toLowerCase().includes(this.filterBy.words) || mail.subject.toLowerCase().includes(this.filterBy.words)
                 }
+
 
             })
         },
@@ -81,12 +89,41 @@ export default {
             .then(mails => {
                 this.mails = mails
             })
+        eventBus.$on('removeImportantMail', id => {
+            console.log(id);
+            this.removeMail(id)
+            this.selected()
+            eventBus.$emit('mail-changed', this.mails);
+
+
+        })
         eventBus.$on('set-filter', filter => {
+
             this.filterBy = filter
             console.log(filter);
 
 
         })
+        eventBus.$on('selected', mail => {
+                this.selected()
+                console.log('guck');
+                eventBus.$emit('mail-changed', this.mails);
+
+
+            }),
+            eventBus.$on('updateReadMode', mail => {
+                console.log('yeah');
+                this.updateReadMode(mail)
+                mailService.updateMail()
+                eventBus.$emit('mail-changed', this.mails);
+
+
+            })
+
+
+
+
+
 
 
     },

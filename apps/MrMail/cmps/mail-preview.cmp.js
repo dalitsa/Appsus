@@ -8,11 +8,15 @@ export default {
 <li class="mail-preview "  > 
 
     <div class="mail-row"  @click ="selected" v-bind:class="readMode">
-    <span>    <span class="fa fa-star" @click.stop="addImportant"  v-bind:class = "addImportance"></span>
- 
-   {{mail.from}}</span><span class="mail-content"><span class = "mail-subject"> {{mail.subject}}</span> <span class="mail-body">{{previewTxt}}</span></span> <span class = "mail-sent-at">{{fixTime}}</span></div>
+    <span><span class="fa fa-star" @click.stop="addImportant"  v-bind:class = "addImportance">
+    </span><span class="mail-from">{{mail.from}}</span></span>
+    <span class="mail-content"><span class = "mail-subject"> {{mail.subject}}</span> 
+    <span class="mail-body">{{previewTxt}}</span>
+   </span> 
+    <span class = "mail-sent-at">{{fixTime}}</span>
+    </div>
    <transition name="slide-fade">  <mail-open-preview v-if= "isShown"   @removeMail="removeMail" :mail="currMail"></mail-open-preview>  </transition>
-</li>
+    </li>
        
 
     `,
@@ -50,15 +54,20 @@ export default {
 
         },
         addImportant() {
-            this.mail.isImportant = true
             this.$emit('selected', this.mail)
             this.$emit('mail-changed')
-
+            this.toggleIsImportant(this.mail)
 
         },
         toggleShown() {
             this.isShown = !this.isShown
         },
+        toggleIsImportant(mail) {
+            mail.isImportant = !mail.isImportant
+            console.log(mail);
+
+        },
+
         removeMail(id) {
             this.$emit('removeMail', id)
             this.isShown = false

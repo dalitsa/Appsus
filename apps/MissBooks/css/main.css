@@ -7,6 +7,7 @@
 @import './add-book.css';
 @import './review-preview.css';
 @import './event-bus.css';
+@import './book-filter.css';
 @import url('https://fonts.googleapis.com/css?family=Saira+Semi+Condensed&display=swap');
 * {
     box-sizing: border-box;
@@ -25,6 +26,7 @@ body {
     font-family: 'Saira Semi Condensed', sans-serif;
     font-size: 1em;
     margin: 0;
+    background-color: #fffdf9;
 }
 
 .books-list {
@@ -39,8 +41,35 @@ body {
 }
 
 .book-details {
-    background-color: lightcoral;
+    background-color: #c6cbef;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.book-details li {
+    text-align: center;
+}
+
+.read-more-btn {
+    border: none;
+    background: none;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.read-more-btn:hover {
+    cursor: pointer;
+    color: #fffdf9;
+    outline: 0;
+}
+
+.read-more-btn:focus {
+    outline: 0;
 }
 
 .slide-fade-enter-active {
@@ -52,10 +81,7 @@ body {
 }
 
 .slide-fade-enter,
-.slide-fade-leave-to
-/* .slide-fade-leave-active below version 2.1.8 */
-
-{
+.slide-fade-leave-to {
     transform: translateX(10px);
     opacity: 0;
 }
@@ -63,5 +89,22 @@ body {
 @media (max-width: 890px) {
     .books-list a {
         width: 50%
+    }
+}
+
+@media (max-width: 750px) {
+    .navbar-btn {
+        margin-right: 0.5em;
+    }
+    .book-filter-input {
+        width: 15%;
+        font-size: 0.8em;
+        padding: 5px;
+    }
+    .book-filter {
+        justify-content: center;
+    }
+    .book-filter-input.filter-text {
+        width: 20%;
     }
 }

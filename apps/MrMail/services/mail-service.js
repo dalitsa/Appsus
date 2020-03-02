@@ -52,6 +52,7 @@ function removeMail(id) {
 }
 
 function addMail(mail) {
+    console.log(mail);
     mail.id = utilService.makeId()
     mail.sentAt = Date.now()
     return query()
